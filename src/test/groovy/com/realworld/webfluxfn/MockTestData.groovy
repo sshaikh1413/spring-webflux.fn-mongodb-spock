@@ -104,4 +104,16 @@ class MockTestData {
     public static final CommentView COMMENT_VIEW_12 = makeCommnentView(COMMENT_12, CURRENT_USER_PROFILE);
     public static final CommentView COMMENT_VIEW_21 = makeCommnentView(COMMENT_21, CURRENT_USER_PROFILE);
 
+    static User makeInvalidUser(String prefix) {
+        return User.builder()
+                .encodedPassword(null)
+                .email(null)
+                .username(null)
+                .bio(prefix + "Bio")
+                .image(prefix + "Image")
+                .id(prefix + "_id")
+                .followingIds(null)
+                .build();
+    }
+
 }
